@@ -1,0 +1,55 @@
+{
+  "header": {
+    "title": "Papas Llenos",
+    "menu": "Menú",
+    "about": "Sobre Nosotros",
+    "order": "Ordenar en Línea",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "¡Experimenta lo Mejor en Papas Rellenas!",
+    "description": "Deliciosas, personalizables y llenas de sabor.",
+    "orderButton": "Ordena Ahora"
+  },
+  "menu": {
+    "title": "Menú de Papas Rellenas Deliciosas",
+    "addToCart": "Agregar al Carrito"
+  },
+  "aboutUs": {
+    "title": "Sobre Nosotros",
+    "description": "En Papas Llenos, creemos en proporcionar las papas cargadas más frescas y deliciosas. Nuestro viaje comenzó con una pasión por crear la comida reconfortante perfecta, y hoy estamos orgullosos de servir a nuestra comunidad con comidas abundantes que brindan alegría en cada bocado. ¡Únase a nosotros y pruebe la diferencia que hace la calidad!",
+    "imageAlt": "Nuestro Equipo"
+  },
+  "orderOnline": {
+    "title": "Ordenar en Línea",
+    "description": "¡Obtén un 10% de descuento en tu primera compra cuando ordenes en línea!",
+    "button": "Ordenar Ahora"
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "location": "Ubicación",
+    "address": "123 Potato Lane, Food City, FC 12345",
+    "hours": "Horas",
+    "hoursDetails": {
+      "weekdays": "Lun-Sáb: 11am - 9pm",
+      "sunday": "Dom: Cerrado"
+    },
+    "contact": "Contacto",
+    "phone": "Teléfono: (123) 456-7890",
+    "email": "Correo Electrónico: info@papasllenos.com",
+    "sendMessage": "Envíenos un Mensaje",
+    "yourName": "Tu Nombre",
+    "yourEmail": "Tu Correo Electrónico",
+    "yourMessage": "Tu Mensaje",
+    "sendButton": "Enviar Mensaje"
+  },
+  "footer": {
+    "followUs": "Síguenos en las redes sociales:",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "copyright": "&copy; 2024 Papas Llenos. Todos los derechos reservados.",
+    "termsOfService": "Términos de Servicio",
+    "privacyPolicy": "Política de Privacidad"
+  }
+}

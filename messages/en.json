@@ -1,0 +1,55 @@
+{
+    "header": {
+      "title": "Papas Llenos",
+      "menu": "Menu",
+      "about": "About Us",
+      "order": "Order Online",
+      "contact": "Contact"
+    },
+    "hero": {
+        "title": "Experience the Ultimate in Loaded Potatoes!",
+        "description": "Delicious, customizable, and packed with flavor.",
+        "orderButton": "Order Now"
+    },
+    "menu": {
+      "title": "Delicious Loaded Potatoes Menu",
+      "addToCart": "Add to Cart"
+    },
+    "aboutUs": {
+      "title": "About Us",
+      "description": "At Papas Llenos, we believe in providing the freshest and most delicious loaded potatoes. Our journey started with a passion for creating the perfect comfort food, and today, we are proud to serve our community with hearty meals that bring joy to every bite. Join us and taste the difference quality makes!",
+      "imageAlt": "Our Team"
+    },
+    "orderOnline": {
+      "title": "Order Online",
+      "description": "Get 10% off your first purchase when you order online!",
+      "button": "Order Now"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "location": "Location",
+      "address": "123 Potato Lane, Food City, FC 12345",
+      "hours": "Hours",
+      "hoursDetails": {
+        "weekdays": "Mon-Sat: 11am - 9pm",
+        "sunday": "Sun: Closed"
+      },
+      "contact": "Contact",
+      "phone": "Phone: (123) 456-7890",
+      "email": "Email: info@papasllenos.com",
+      "sendMessage": "Send Us a Message",
+      "yourName": "Your Name",
+      "yourEmail": "Your Email",
+      "yourMessage": "Your Message",
+      "sendButton": "Send Message"
+    },
+    "footer": {
+      "followUs": "Follow us on social media:",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter",
+      "copyright": "&copy; 2024 Papas Llenos. All rights reserved.",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy"
+    }
+  }
