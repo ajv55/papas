@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   description: "Papas Llenos offers a variety of delicious, fully loaded potatoes with customizable toppings. Order online for delivery or pickup. Located in [Your Location], we serve the best comfort food in town!",
   keywords: "loaded potatoes, customizable potatoes, comfort food, Papas Llenos, food delivery, best potatoes in [Your Location]",
   authors: "Papas Llenos" as any,
-  viewport: "width=device-width, initial-scale=1.0",
 };
 
 export default async function RootLayout({

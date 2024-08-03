@@ -11,6 +11,7 @@ import { usePathname } from 'next/navigation';
 import toast from 'react-hot-toast';
 import Receipt from '@/app/components/manageOrder';
 import Analytics from '@/app/components/analytics';
+import Product from '@/app/components/product';
 
 // Separate viewport configuration
 export const viewport = 'width=device-width, initial-scale=1';
@@ -34,9 +35,14 @@ const Page =  () => {
   const router = useRouter();
 
   useEffect(() => {
+    if(session === null){
+      return router.push('/login')
+    }
+    
     if(session && session === null){
       return router.push('/login')
     }
+    
     session && session?.user?.role !== 'admin' && router.push('/denied')
   }, [session])
 
@@ -168,7 +174,7 @@ const Page =  () => {
     
       {activeTab === 'orders' && <Receipt isLoading={isLoading} orders={orders} onCompleteOrder={updateStatus} />}
       {activeTab === 'analytics' && <Analytics orders={orders} />}
-      {activeTab === 'products' && <div>products..</div>}
+      {activeTab === 'products' && <Product />}
     </main>
   </div>
   );

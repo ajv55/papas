@@ -9,6 +9,9 @@ import { RootState } from '@/app/store';
 import { useDispatch } from 'react-redux';
 import { setIsCartOpen } from '@/app/slices/cartSlice';
 import { FiShoppingCart } from "react-icons/fi";
+import { useSession } from 'next-auth/react';
+import { LuLayoutDashboard } from "react-icons/lu";
+import Link from 'next/link';
 
 const Header = () => {
   const t = useTranslations('header');
@@ -18,6 +21,11 @@ const Header = () => {
   const router = useRouter();
   const totalQuantity = useSelector((state: RootState) => state.cart.totalQuantity) || 0;
   const dispatch = useDispatch();
+
+  const {data: session} = useSession();
+  const userRole = session?.user?.role
+
+  console.log(session)
 
   const pathname = usePathname();
 
@@ -52,20 +60,23 @@ const Header = () => {
         </nav>
         
         </div>
-        <div className="relative cursor-pointer" onClick={openModal}>
+        <div className="relative flex gap-5 items-center cursor-pointer" onClick={openModal}>
         <FiShoppingCart className='text-primary-dark' size={30} />
         {totalQuantity! > 0 && (
           <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
             {totalQuantity}
           </span>
         )}
-      </div>
-      {isCartOpen && <CartModal />}
+        {userRole === 'admin' && <Link href='/orders'><LuLayoutDashboard size={30} className='text-primary-dark' /></Link>}
         <div className='flex text-sm justify-center gap-3 items-center'>
             <button className='hover:underline hover:underline-offset-2 text-white' onClick={() => handleLocaleChange('en')}>EN</button>
             <span className='text-white'>|</span>
             <button className='hover:underline hover:underline-offset-2 text-white' onClick={() => handleLocaleChange('es')}>ES</button>
         </div>
+      </div>
+      
+      {isCartOpen && <CartModal />}
+        
       </div>
     </header>
   );

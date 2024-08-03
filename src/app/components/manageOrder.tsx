@@ -140,8 +140,8 @@ const Receipt: React.FC<ReceiptProps> = ({ orders, onCompleteOrder , isLoading})
           fontSize: 10,
           valign: 'middle',
           halign: 'center',
-          fillColor: '#FFEAE3',
-          textColor: '#121481',
+          fillColor: '#FB8B24',
+          textColor: '#5F0F40',
           minCellHeight: 20,
         },
       });
@@ -154,7 +154,7 @@ const Receipt: React.FC<ReceiptProps> = ({ orders, onCompleteOrder , isLoading})
       }
 
       doc.setFont('helvetica', 'bold');
-      doc.setTextColor('#121481');
+      doc.setTextColor('#5F0F40');
       doc.text(`Total Amount: $${order.totalAmount.toFixed(2)}`, 10, startY);
       startY += 20;
 
@@ -282,7 +282,7 @@ const Receipt: React.FC<ReceiptProps> = ({ orders, onCompleteOrder , isLoading})
       </AnimatePresence>
 
       <div className="flex lg:flex justify-end space-x-4 mt-6">
-        <button onClick={handleGeneratePDF} className="bg-primary-pink text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-dark hover:text-primary-light transition duration-300">
+        <button onClick={handleGeneratePDF} className="bg-primary-pink text-primary-dark font-bold py-2 px-4 bg-primary-light rounded-lg hover:bg-primary-dark hover:text-primary-light transition duration-300">
           Download All Receipts as PDF
         </button>
       </div>

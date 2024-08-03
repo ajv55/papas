@@ -41,8 +41,10 @@ export default function Page() {
     useEffect(() => {
       if(session?.user && session?.user.role !== 'admin'){
         router.push('/denied')
-      
      }
+     if(session && session?.user.role === 'admin'){
+      router.push('/orders')
+   }
     }, [session?.user.role])
 
     console.log(session?.user.role)
