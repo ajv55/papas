@@ -10,6 +10,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import toast from 'react-hot-toast';
 import Receipt from '@/app/components/manageOrder';
+import Analytics from '@/app/components/analytics';
 
 // Separate viewport configuration
 export const viewport = 'width=device-width, initial-scale=1';
@@ -166,7 +167,7 @@ const Page =  () => {
     <main className="flex-1 lg:p-8 p-2 overflow-scroll">
     
       {activeTab === 'orders' && <Receipt isLoading={isLoading} orders={orders} onCompleteOrder={updateStatus} />}
-      {activeTab === 'analytics' && <div>analytics..</div>}
+      {activeTab === 'analytics' && <Analytics orders={orders} />}
       {activeTab === 'products' && <div>products..</div>}
     </main>
   </div>
