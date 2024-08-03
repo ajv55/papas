@@ -54,7 +54,7 @@ const Header = () => {
         <nav className="space-x-6 lg:block hidden">
           <a href="#menu" className="text-white hover:text-green-200">{t('menu')}</a>
           <a href="#about" className="text-white hover:text-green-200">{t('about')}</a>
-          <a href="#order" className="text-white hover:text-green-200">{t('order')}</a>
+          <a href="#menu" className="text-white hover:text-green-200">{t('order')}</a>
           <a href="#contact" className="text-white hover:text-green-200">{t('contact')}</a>
         </nav>
         

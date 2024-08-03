@@ -20,10 +20,10 @@
     "description": "En Papas Llenos, creemos en proporcionar las papas cargadas más frescas y deliciosas. Nuestro viaje comenzó con una pasión por crear la comida reconfortante perfecta, y hoy estamos orgullosos de servir a nuestra comunidad con comidas abundantes que brindan alegría en cada bocado. ¡Únase a nosotros y pruebe la diferencia que hace la calidad!",
     "imageAlt": "Nuestro Equipo"
   },
-  "orderOnline": {
-    "title": "Ordenar en Línea",
-    "description": "¡Obtén un 10% de descuento en tu primera compra cuando ordenes en línea!",
-    "button": "Ordenar Ahora"
+  "whyChooseUs": {
+    "title": "¿Por qué Elegirnos?",
+    "description": "¡Experimenta un servicio y calidad excepcionales con cada pedido!",
+    "button": "Saber Más"
   },
   "contact": {
     "title": "Contáctenos",
@@ -51,5 +51,20 @@
     "copyright": "2024 Papas Llenos. Todos los derechos reservados.",
     "termsOfService": "Términos de Servicio",
     "privacyPolicy": "Política de Privacidad"
+  },
+  "modal": {
+    "title": "¿Por qué Elegirnos?",
+    "description": "¡Experimenta un servicio y calidad excepcionales con cada pedido! Descubre lo que nos diferencia y por qué nuestros clientes nos aman.",
+    "benefitsTitle": "Nuestros Beneficios Únicos:",
+    "benefits": [
+      "Servicio Personalizado: Adaptamos cada experiencia para satisfacer tus necesidades únicas, asegurando que obtengas exactamente lo que buscas.",
+      "Calidad Premium: Nuestros productos están elaborados con los materiales de más alta calidad y atención al detalle, garantizando durabilidad y excelencia.",
+      "Soporte Excepcional: Nuestro equipo de soporte dedicado está disponible las 24 horas del día para asistirte con cualquier pregunta o inquietud, proporcionando una experiencia fluida de principio a fin.",
+      "Ofertas Exclusivas: Disfruta de acceso a promociones y descuentos especiales disponibles solo para nuestros valiosos clientes, aumentando el valor de cada compra.",
+      "Prácticas Sostenibles: Estamos comprometidos con prácticas ecológicas, utilizando materiales y procesos sostenibles para minimizar nuestro impacto ambiental."
+    ],
+    "testimonial": "¡Este servicio cambió mi vida! - Cliente Feliz",
+    "testimonialTitle": "Lo Que Dicen Nuestros Clientes:",
+    "contactButton": "Contáctanos"
   }
 }

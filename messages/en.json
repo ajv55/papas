@@ -20,10 +20,10 @@
       "description": "At Papas Llenos, we believe in providing the freshest and most delicious loaded potatoes. Our journey started with a passion for creating the perfect comfort food, and today, we are proud to serve our community with hearty meals that bring joy to every bite. Join us and taste the difference quality makes!",
       "imageAlt": "Our Team"
     },
-    "orderOnline": {
-      "title": "Order Online",
-      "description": "Get 10% off your first purchase when you order online!",
-      "button": "Order Now"
+    "whyChooseUs": {
+      "title": "Why Choose Us?",
+      "description": "Experience exceptional service and quality with every order!",
+      "button": "Learn More"
     },
     "contact": {
       "title": "Contact Us",
@@ -51,5 +51,20 @@
       "copyright": "2024 Papas Llenos. All rights reserved.",
       "termsOfService": "Terms of Service",
       "privacyPolicy": "Privacy Policy"
+    },
+    "modal": {
+      "title": "Why Choose Us?",
+      "description": "Experience exceptional service and quality with every order! Discover what sets us apart and why our customers love us.",
+      "benefitsTitle": "Our Unique Benefits:",
+      "benefits": [
+        "Personalized Service: We tailor every experience to meet your unique needs, ensuring you get exactly what you're looking for.",
+        "Premium Quality: Our products are crafted with the highest quality materials and attention to detail, guaranteeing durability and excellence.",
+        "Exceptional Support: Our dedicated support team is available around the clock to assist you with any questions or concerns, providing a seamless experience from start to finish.",
+        "Exclusive Offers: Enjoy access to special promotions and discounts available only to our valued customers, enhancing the value of every purchase.",
+        "Sustainable Practices: We are committed to eco-friendly practices, using sustainable materials and processes to minimize our environmental impact."
+      ],
+      "testimonial": "This service changed my life! - Happy Customer",
+      "testimonialTitle": "What Our Customers Say:",
+      "contactButton": "Contact Us"
     }
   }

@@ -20,10 +20,10 @@ const Footer = () => {
           </Link >
         </div>
         <p className="mt-4">&copy; {t('copyright')}</p>
-        <p className='text-sm text-center mt-3 text-white lg:text-right'>Designed and built by Abel J. Villareal</p>
+        <p className='text-sm w-full flex justify-center items-center text-center mt-3 text-white lg:text-right'>Designed and built by Abel J. Villareal</p>
         <p className="mt-2">
-          <Link  href="#terms" className="underline hover:text-accent-dark">{t('termsOfService')}</Link > | 
-          <Link  href="#privacy" className="underline hover:text-accent-dark">{t('privacyPolicy')}</Link >
+          <Link  href="#terms" className="underline hover:text-primary-light">{t('termsOfService')}</Link > | 
+          <Link  href="#privacy" className="underline hover:text-primary-light">{t('privacyPolicy')}</Link >
         </p>
       </div>
     </footer>

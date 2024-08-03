@@ -5,6 +5,7 @@ import 'jspdf-autotable';
 import { format, parseISO } from 'date-fns';
 import { AnimatePresence, motion } from 'framer-motion';
 import ReceiptSkeleton from '../skeleton/receiptSkeleton'; 
+import GenerateLetter from './letter';
 
 interface Order {
   id: string;
@@ -286,21 +287,6 @@ const Receipt: React.FC<ReceiptProps> = ({ orders, onCompleteOrder , isLoading})
           Download All Receipts as PDF
         </button>
       </div>
-
-      {/* resume here just till i get it done then delete the code lol */}
-
-      {/* <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Download My Resume</h1>
-      <div ref={resumeRef}>
-        <Resume />
-      </div>
-      <button
-        onClick={generatePDF}
-        className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
-      >
-        Download PDF
-      </button>
-    </div> */}
 
     </div>
   );
