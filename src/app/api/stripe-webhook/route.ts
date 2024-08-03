@@ -1,16 +1,18 @@
 import Stripe from "stripe";
-import prisma from "@/app/lib/prisma"; 
+import prisma from "@/app/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
-import { StripeCustomCheckout } from "@stripe/stripe-js";
+import { Resend } from 'resend';
+import { EmailTemplate } from '@/app/components/email-template';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: '2024-06-20' });
 const webhookSecret: string = process.env.STRIPE_WEBHOOK_KEY!;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const webhookHandler = async (req: NextRequest) => {
     try {
         const buf = await req.text();
         const sig = req.headers.get("stripe-signature")!;
-    
+
         let event: Stripe.Event;
 
         // Verify and construct the event
@@ -112,12 +114,57 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
                     })),
                 },
             },
+            include: {
+                items: true, // Include the related items
+            },
         });
 
         console.log(`Order created successfully: ${JSON.stringify(order)}`);
+
+        // Send the email directly
+        await sendEmail({
+            totalAmount: order.totalAmount,
+            buyer: {
+                name: order.buyerName,
+                email: order.buyerEmail,
+                phone: order.buyerPhone,
+            },
+            cartItems: order.items,
+            orderId: order.id,
+            date: new Date().toISOString(),
+        });
+
     } catch (err) {
         console.error(`Error creating order: ${err}`);
     }
 }
 
+async function sendEmail({ totalAmount, buyer, cartItems, orderId, date }: any) {
+    try {
+        const { data, error } = await resend.emails.send({
+            from: 'Abel <abel@myfitgenius.com>',
+            to: buyer?.email,
+            subject: 'Receipt',
+            react: EmailTemplate({ 
+                thanks: 'Thank you for your purchase', 
+                cartItems, 
+                totalAmount, 
+                buyer, 
+                orderId, 
+                date 
+            }),
+        });
+
+        if (error) {
+            console.error('Error sending email:', error);
+            throw new Error('Failed to send email');
+        }
+
+        console.log('Email sent successfully:', data);
+    } catch (error) {
+        console.error('Error sending email:', error);
+    }
+}
+
 export { webhookHandler as POST };
+

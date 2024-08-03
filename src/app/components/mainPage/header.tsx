@@ -25,7 +25,6 @@ const Header = () => {
   const {data: session} = useSession();
   const userRole = session?.user?.role
 
-  console.log(session)
 
   const pathname = usePathname();
 
@@ -33,19 +32,19 @@ const Header = () => {
     dispatch(setIsCartOpen(true));
   };
 
-  const handleLocaleChange = (locale: string) => {
-    // Remove the current locale prefix if it exists
-    const currentPath = pathname.replace(/^\/[a-z]{2}/, '');
-    // Construct the new path with the new locale
-    const newPath = `/${locale}${currentPath}`;
-    // Navigate to the new path
-    router.push(newPath);
-  };
+  // const handleLocaleChange = (locale: string) => {
+  //   // Remove the current locale prefix if it exists
+  //   const currentPath = pathname.replace(/^\/[a-z]{2}/, '');
+  //   // Construct the new path with the new locale
+  //   const newPath = `/${locale}${currentPath}`;
+  //   // Navigate to the new path
+  //   router.push(newPath);
+  // };
   
-    // const handleLocaleChange = (locale: string) => {
-    //   document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31316000; SameSite=Lax`;
-    //   router.refresh();
-    // }
+    const handleLocaleChange = (locale: string) => {
+      document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31316000; SameSite=Lax`;
+      router.refresh();
+    }
 
   return (
     <header className="bg-primary-orange p-4">
@@ -60,20 +59,27 @@ const Header = () => {
         </nav>
         
         </div>
-        <div className="relative flex gap-5 items-center cursor-pointer" onClick={openModal}>
-        <FiShoppingCart className='text-primary-dark' size={30} />
-        {totalQuantity! > 0 && (
-          <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
-            {totalQuantity}
-          </span>
-        )}
-        {userRole === 'admin' && <Link href='/orders'><LuLayoutDashboard size={30} className='text-primary-dark' /></Link>}
-        <div className='flex text-sm justify-center gap-3 items-center'>
-            <button className='hover:underline hover:underline-offset-2 text-white' onClick={() => handleLocaleChange('en')}>EN</button>
-            <span className='text-white'>|</span>
-            <button className='hover:underline hover:underline-offset-2 text-white' onClick={() => handleLocaleChange('es')}>ES</button>
+
+        
+
+        <div className='flex gap-5 items-center'>
+            <div className="relative  cursor-pointer" >
+            <FiShoppingCart onClick={openModal} className='text-primary-dark' size={30} />
+            {totalQuantity! > 0 && (
+              <span className="absolute -top-4 left-5 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
+                {totalQuantity}
+              </span>
+            )}
+            
+          </div>
+
+          {userRole === 'admin' && <Link href='/orders'><LuLayoutDashboard size={30} className='text-primary-dark' /></Link>}
+            <div className='flex text-sm justify-center gap-3 items-center'>
+                <button className='hover:underline hover:underline-offset-2 text-white' onClick={() => handleLocaleChange('en')}>EN</button>
+                <span className='text-white'>|</span>
+                <button className='hover:underline hover:underline-offset-2 text-white' onClick={() => handleLocaleChange('es')}>ES</button>
+            </div>
         </div>
-      </div>
       
       {isCartOpen && <CartModal />}
         
