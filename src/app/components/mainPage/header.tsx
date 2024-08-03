@@ -2,12 +2,13 @@
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import CartModal from './cartModal';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { useDispatch } from 'react-redux';
 import { setIsCartOpen } from '@/app/slices/cartSlice';
+import { FiShoppingCart } from "react-icons/fi";
 
 const Header = () => {
   const t = useTranslations('header');
@@ -18,14 +19,25 @@ const Header = () => {
   const totalQuantity = useSelector((state: RootState) => state.cart.totalQuantity) || 0;
   const dispatch = useDispatch();
 
+  const pathname = usePathname();
+
   const openModal = () => {
     dispatch(setIsCartOpen(true));
   };
+
+  const handleLocaleChange = (locale: string) => {
+    // Remove the current locale prefix if it exists
+    const currentPath = pathname.replace(/^\/[a-z]{2}/, '');
+    // Construct the new path with the new locale
+    const newPath = `/${locale}${currentPath}`;
+    // Navigate to the new path
+    router.push(newPath);
+  };
   
-    const handleLocaleChange = (locale: string) => {
-      document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31316000; SameSite=Lax`;
-      router.refresh();
-    }
+    // const handleLocaleChange = (locale: string) => {
+    //   document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31316000; SameSite=Lax`;
+    //   router.refresh();
+    // }
 
   return (
     <header className="bg-primary-orange p-4">
@@ -41,7 +53,7 @@ const Header = () => {
         
         </div>
         <div className="relative cursor-pointer" onClick={openModal}>
-        <FaShoppingCart size={30} />
+        <FiShoppingCart className='text-primary-dark' size={30} />
         {totalQuantity! > 0 && (
           <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
             {totalQuantity}

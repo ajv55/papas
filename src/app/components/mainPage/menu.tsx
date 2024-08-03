@@ -33,6 +33,8 @@ const Menu = () => {
     fetchMenuItems();
   }, [lang]);
 
+  console.log(lang)
+
   if (loading) return <div className="text-center py-16">Loading...</div>;
   if (error) return <div className="text-center py-16 text-red-500">{error}</div>;
 

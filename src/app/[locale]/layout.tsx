@@ -5,6 +5,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import { getMessages } from "next-intl/server";
 import ReduxProvider from "../context/ReduxProvider"; 
 import ToasterContext from "../context/ToasterProvider";
+import Provider from "../context/AuthContext";
 
 const poppins = Poppins({ subsets: ["latin"], weight: '400' });
 
@@ -29,8 +30,10 @@ export default async function RootLayout({
       <body className={`${poppins.className} antialiased`}>
       <NextIntlClientProvider messages={messages}>
           <ReduxProvider>
-            <ToasterContext />
-             {children}
+            <Provider>
+              <ToasterContext />
+              {children}
+            </Provider>
           </ReduxProvider>
         </NextIntlClientProvider>
         </body>
