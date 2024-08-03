@@ -51,7 +51,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold text-white">{t('title')}</div>
         <div className='flex items-center gap-3'>
-        <nav className="space-x-6">
+        <nav className="space-x-6 lg:block hidden">
           <a href="#menu" className="text-white hover:text-green-200">{t('menu')}</a>
           <a href="#about" className="text-white hover:text-green-200">{t('about')}</a>
           <a href="#order" className="text-white hover:text-green-200">{t('order')}</a>
@@ -64,7 +64,7 @@ const Header = () => {
 
         <div className='flex gap-5 items-center'>
             <div className="relative  cursor-pointer" >
-            <FiShoppingCart onClick={openModal} className='text-primary-dark' size={30} />
+            <FiShoppingCart onClick={openModal} className='text-primary-dark lg:w-6 lg:h-6' size={24} />
             {totalQuantity! > 0 && (
               <span className="absolute -top-4 left-5 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
                 {totalQuantity}
@@ -73,7 +73,7 @@ const Header = () => {
             
           </div>
 
-          {userRole === 'admin' && <Link href='/orders'><LuLayoutDashboard size={30} className='text-primary-dark' /></Link>}
+          {userRole === 'admin' && <Link href='/orders'><LuLayoutDashboard size={24} className='text-primary-dark lg:w-6 lg:h-6' /></Link>}
             <div className='flex text-sm justify-center gap-3 items-center'>
                 <button className='hover:underline hover:underline-offset-2 text-white' onClick={() => handleLocaleChange('en')}>EN</button>
                 <span className='text-white'>|</span>

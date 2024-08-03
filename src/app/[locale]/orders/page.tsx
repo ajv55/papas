@@ -38,7 +38,7 @@ const Page =  () => {
     if(session === null){
       return router.push('/login')
     }
-    
+
     if(session && session === null){
       return router.push('/login')
     }
@@ -92,7 +92,7 @@ const Page =  () => {
         <ul className="space-y-14">
           <li>
             <button
-              className={`text-2xl  font-medium w-full text-left ${activeTab === 'orders' ? 'text-primary-pink' : 'text-white'}`}
+              className={`text-2xl  font-medium w-full text-left ${activeTab === 'orders' ? 'text-primary-light' : 'text-white'}`}
               onClick={() => {setActiveTab('orders'); setIsOpen(!isOpen)}}
             >
               Orders
@@ -100,7 +100,7 @@ const Page =  () => {
           </li>
           <li>
             <button
-              className={`text-2xl font-medium w-full text-left ${activeTab === 'analytics' ? 'text-primary-pink' : 'text-white'}`}
+              className={`text-2xl font-medium w-full text-left ${activeTab === 'analytics' ? 'text-primary-light' : 'text-white'}`}
               onClick={() => {setActiveTab('analytics'); setIsOpen(!isOpen)}}
             >
               Analytics
@@ -108,7 +108,7 @@ const Page =  () => {
           </li>
           <li>
             <button
-              className={`text-2xl font-medium w-full text-left ${activeTab === 'products' ? 'text-primary-pink' : 'text-white'}`}
+              className={`text-2xl font-medium w-full text-left ${activeTab === 'products' ? 'text-primary-light' : 'text-white'}`}
               onClick={() => {setActiveTab('products'); setIsOpen(!isOpen)}}
             >
               Products
@@ -119,7 +119,7 @@ const Page =  () => {
                         
                         <div className=' lg:w-full lg:mt-0 mt-8 w-[97%] h-[5rem] gap-4 flex flex-col justify-center p-1 items-center'>
                           <Link href='/' className='text-white self-start'>Home</Link>
-                            <p className='text-sm self-end text-white  text-center lg:text-right'>Copyright © 2024 Sweet Bliss Bakery. All rights reserved.</p>
+                            <p className='text-sm self-end text-white  text-center lg:text-right'>Copyright © 2024 Papas Llenos. All rights reserved.</p>
                         </div>
                     </motion.div>
                 )}

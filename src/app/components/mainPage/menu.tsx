@@ -49,14 +49,14 @@ const Menu = () => {
       <h2 className="text-4xl font-bold mb-8 text-primary-dark">{t('title')}</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {menuItems.map((item: any) => (
-          <motion.div whileHover={{scale: 1.06, rotate: 2}} whileTap={{scale: 1.15, }} key={item.id} className="bg-white hover:ring-2 hover:ring-primary-dark cursor-pointer hover:shadow-primary-light  rounded-lg h-[28rem] shadow-lg overflow-hidden">
+          <motion.div whileHover={{scale: 1.06, rotate: 2}} whileTap={{scale: 1.15, }} key={item.id} className="bg-white hover:ring-2 hover:ring-primary-dark cursor-pointer hover:shadow-primary-light  rounded-lg h-[32rem] shadow-lg overflow-hidden">
             <div className="relative flex flex-col justify-center items-center pb-2/3">
               <Image
                 src={item?.image}
                 width={200}
                 height={200}
                 alt={lang === 'en' ? item.name_en : item.name_es}
-                className=" h-[15rem] w-full object-cover "
+                className=" h-[16rem] w-full object-cover "
               />
             </div>
             <div className="p-4">
