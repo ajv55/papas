@@ -10,10 +10,21 @@ import Provider from "../context/AuthContext";
 const poppins = Poppins({ subsets: ["latin"], weight: '400' });
 
 export const metadata: Metadata = {
-  title: "Papas Llenos | Delicious Fully Loaded Potatoes",
-  description: "Papas Llenos offers a variety of delicious, fully loaded potatoes with customizable toppings. Order online for delivery or pickup. Located in [Your Location], we serve the best comfort food in town!",
-  keywords: "loaded potatoes, customizable potatoes, comfort food, Papas Llenos, food delivery, best potatoes in [Your Location]",
+  title: {
+    default: "Papas Llenos | Delicious Fully Loaded Potatoes",
+    template: '%s Papas Llenos | Delicious Fully Loaded Potatoes'
+  },
+  description: "Papas Llenos offers a variety of delicious, fully loaded potatoes with customizable toppings. Order online for delivery or pickup. Located in Immokalee, Florida, we serve the best comfort food in town!",
+  keywords: "loaded potatoes, customizable potatoes, comfort food, Papas Llenos, food delivery, best fully loaded potatoes in Immokalee, Florida",
   authors: "Papas Llenos" as any,
+  openGraph: {
+    title: "Papas Llenos | Delicious Fully Loaded Potatoes",
+    description: "Papas Llenos offers a variety of delicious, fully loaded potatoes with customizable toppings. Order online for delivery or pickup. Located in Immokalee, Florida, we serve the best comfort food in town!",
+    type: 'website',
+    url: process.env.BASED_URL,
+    siteName: 'Papas Llenos',
+
+  }
 };
 
 export default async function RootLayout({
