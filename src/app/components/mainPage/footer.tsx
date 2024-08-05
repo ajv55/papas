@@ -25,9 +25,9 @@ const Footer = () => {
         <div className="text-center text-sm mb-6">
           <p className="mb-2">&copy; {t('copyright')}</p>
           <p className="flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-4">
-            <Link href="#terms" className="underline hover:text-primary-light transition-colors duration-300">{t('termsOfService')}</Link>
+            <Link href="/terms" className="underline hover:text-primary-light transition-colors duration-300">{t('termsOfService')}</Link>
             <span>|</span>
-            <Link href="#privacy" className="underline hover:text-primary-light transition-colors duration-300">{t('privacyPolicy')}</Link>
+            <Link href="/privacy" className="underline hover:text-primary-light transition-colors duration-300">{t('privacyPolicy')}</Link>
           </p>
         </div>
         <p className="text-xs text-gray-300 text-center mt-6 lg:text-right">

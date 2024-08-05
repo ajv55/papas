@@ -49,7 +49,7 @@ const Header = () => {
   return (
     <header className="bg-primary-orange p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold text-white">{t('title')}</div>
+        <Link href='/' className="text-2xl font-bold text-white">{t('title')}</Link>
         <div className='flex items-center gap-3'>
         <nav className="space-x-6 lg:block hidden">
           <a href="/" className="text-white hover:text-green-200">{t('menu')}</a>
