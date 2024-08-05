@@ -52,7 +52,7 @@ const Header = () => {
         <div className="text-2xl font-bold text-white">{t('title')}</div>
         <div className='flex items-center gap-3'>
         <nav className="space-x-6 lg:block hidden">
-          <a href="#menu" className="text-white hover:text-green-200">{t('menu')}</a>
+          <a href="/" className="text-white hover:text-green-200">{t('menu')}</a>
           <a href="#about" className="text-white hover:text-green-200">{t('about')}</a>
           <a href="#menu" className="text-white hover:text-green-200">{t('order')}</a>
           <a href="#contact" className="text-white hover:text-green-200">{t('contact')}</a>

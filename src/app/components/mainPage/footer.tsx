@@ -1,29 +1,37 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   const t = useTranslations('footer');
 
   return (
-    <footer className="bg-primary-dark text-white py-6">
-      <div className="container mx-auto text-center">
-        <p className="mb-4">{t('followUs')}</p>
-        <div className="flex justify-center space-x-6">
-          <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-light">
-            {t('facebook')}
-          </Link >
-          <Link  href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-light">
-            {t('instagram')}
-          </Link >
-          <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-light">
-            {t('twitter')}
-          </Link >
+    <footer className="bg-primary-dark text-white py-8">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="text-center mb-6">
+          <p className="text-lg font-semibold mb-2">{t('followUs')}</p>
+          <div className="flex justify-center space-x-4">
+            <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary-light transition-colors duration-300">
+              <FaFacebookF size={20} />
+            </Link>
+            <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary-light transition-colors duration-300">
+              <FaInstagram size={20} />
+            </Link>
+            <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary-light transition-colors duration-300">
+              <FaTwitter size={20} />
+            </Link>
+          </div>
         </div>
-        <p className="mt-4">&copy; {t('copyright')}</p>
-        <p className='text-sm w-full flex justify-center items-center text-center mt-3 text-white lg:text-right'>Designed and built by Abel J. Villareal</p>
-        <p className="mt-2">
-          <Link  href="#terms" className="underline hover:text-primary-light">{t('termsOfService')}</Link > | 
-          <Link  href="#privacy" className="underline hover:text-primary-light">{t('privacyPolicy')}</Link >
+        <div className="text-center text-sm mb-6">
+          <p className="mb-2">&copy; {t('copyright')}</p>
+          <p className="flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-4">
+            <Link href="#terms" className="underline hover:text-primary-light transition-colors duration-300">{t('termsOfService')}</Link>
+            <span>|</span>
+            <Link href="#privacy" className="underline hover:text-primary-light transition-colors duration-300">{t('privacyPolicy')}</Link>
+          </p>
+        </div>
+        <p className="text-xs text-gray-300 text-center mt-6 lg:text-right">
+          Designed and built by Abel J. Villareal
         </p>
       </div>
     </footer>
@@ -31,3 +39,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
