@@ -1,0 +1,109 @@
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.top svg {
+    position: relative;
+    display: block;
+    width: calc(278% + 1.3px);
+    height: 323px;
+}
+
+.top .shape {
+    fill: #FFFFFF;
+}
+
+
+/* bottom tilt */
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.bottom svg {
+    position: relative;
+    display: block;
+    width: calc(278% + 1.3px);
+    height: 323px;
+}
+
+.bottom .fill {
+    fill: #FFFFFF;
+}
+
+
+.grid {
+    background-color: rgb(253, 253, 253); /* Equivalent to Tailwind's bg-gray-100 */
+    background-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 0.5px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 0.5px);
+    background-size: 25px 25px;
+    background-blend-mode: normal;
+  }
+
+  .background {
+    background-color: rgba(243, 244, 246);
+    background-image:
+      radial-gradient(circle at top left, transparent, rgba(255, 255, 255, 0.8)),
+      radial-gradient(circle at top right, transparent, rgba(255, 255, 255, 0.8)),
+      radial-gradient(circle at bottom left, transparent, rgba(255, 255, 255, 0.8)),
+      radial-gradient(circle at bottom right, transparent, rgba(255, 255, 255, 0.8)),
+      linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 25px 25px;
+    background-blend-mode: multiply, normal, normal, multiply, multiply, multiply;
+  }
+
+  /* ripple effect */
+  .pressed {
+    position: relative;
+    animation: ripple 0.5s linear;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* icon  */
+
+.icon {
+  position: relative;
+}
+
+.icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+  pointer-events: none; /* Ensure the ripple effect doesn't interfere with clicking the icon */
+}
+
+.icon::hover {
+  background-color: #a9a9a9;
+}
+
+.icon.pressed::after {
+  transform: scale(1);
+}

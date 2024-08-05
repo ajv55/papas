@@ -63,6 +63,8 @@ export const config = {
     '/login',
     '/reg',
     '/',
-    '/denied'
-  ],
+    '/denied',
+    '/terms',
+    '/privacy'
+    ],
 };

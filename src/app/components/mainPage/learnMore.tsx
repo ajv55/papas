@@ -19,7 +19,7 @@ const LearnMoreModal: FC<LearnMoreModalProps> = ({ isOpen, onClose }) => {
     exit={{ opacity: 0 }}
     className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
   >
-    <div className="bg-primary-dark text-white p-6 rounded-lg w-11/12 md:w-3/4 lg:w-1/2 relative">
+    <div className="bg-primary-dark  text-white p-6 rounded-lg w-11/12 lg:h-[40rem] h-[32rem] overflow-scroll md:w-3/4 lg:w-1/2 relative">
       <button className="absolute top-4 right-4 text-primary-light hover:text-primary-orange transition duration-300" onClick={onClose}>
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -36,7 +36,7 @@ const LearnMoreModal: FC<LearnMoreModalProps> = ({ isOpen, onClose }) => {
         <li>{t('modal.benefits.4')}</li>
       </ul>
       <h4 className="text-xl font-semibold mb-2">{t('modal.testimonialTitle')}</h4>
-      <blockquote className="italic mb-4 border-l-4 border-primary-light pl-4">
+      <blockquote className="italic mb-7 border-l-4 border-primary-light pl-4">
         {t('modal.testimonial')}
       </blockquote>
       <a onClick={onClose} href="#contact" className="bg-primary-light text-primary-dark px-6 py-3 rounded hover:bg-primary-orange transition duration-300">
