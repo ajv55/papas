@@ -6,12 +6,12 @@ import Footer from '@/app/components/mainPage/footer';
 const Page = () => (
   <div className={`${style.background} w-full mx-auto`}>
     <Header />
-    <div className='container mx-auto'>
-      <h1 className="lg:text-6xl text-3xl mt-4 font-bold mb-6 text-center" style={{ color: '#FB8B24' }}>Terms of Service</h1>
+    <div className='container lg:p-0 p-2 mx-auto'>
+      <h1 className="lg:text-6xl text-4xl mt-4 font-bold mb-6 text-center" style={{ color: '#FB8B24' }}>Terms of Service</h1>
       <p className="text-gray-600 mb-8 text-center">Last Updated: July, 17, 2024</p>
       
       <section className="mb-8">
-        <h2 className="lg:text-3xl text-xl font-semibold mb-4" style={{ color: '#E36414' }}>Welcome to Papas Llenos!</h2>
+        <h2 className="lg:text-3xl text-2xl font-semibold mb-4" style={{ color: '#E36414' }}>Welcome to Papas Llenos!</h2>
         <p className="text-gray-700">These Terms of Service (&quot;Terms&quot;) govern your use of our website and services. By accessing or using our website, you agree to comply with and be bound by these Terms.</p>
       </section>
 
@@ -62,7 +62,7 @@ const Page = () => (
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4" style={{ color: '#E36414' }}>Governing Law</h2>
-        <p className="text-gray-700">These Terms are governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law principles.</p>
+        <p className="text-gray-700">These Terms are governed by and construed in accordance with the laws of Florida, without regard to its conflict of law principles.</p>
       </section>
 
       <section className="mb-10">

@@ -6,7 +6,7 @@ import Footer from '@/app/components/mainPage/footer';
 const Page = () => (
   <div className={`${style.background} w-full mx-auto`}>
     <Header />
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl lg:p-0 p-2 mx-auto">
         <h1 className="lg:text-6xl text-3xl font-bold mt-6 mb-6 text-primary-dark">Privacy Policy</h1>
         <p className="text-gray-600 mb-6">Last Updated: July 17, 2024</p>
 

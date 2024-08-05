@@ -24,7 +24,7 @@ const Footer = () => {
         </div>
         <div className="text-center text-sm mb-6">
           <p className="mb-2">&copy; {t('copyright')}</p>
-          <p className="flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-4">
+          <p className="flex gap-2 justify-center items-center lg:flex-row lg:justify-center lg:space-x-4">
             <Link href="/terms" className="underline hover:text-primary-light transition-colors duration-300">{t('termsOfService')}</Link>
             <span>|</span>
             <Link href="/privacy" className="underline hover:text-primary-light transition-colors duration-300">{t('privacyPolicy')}</Link>
