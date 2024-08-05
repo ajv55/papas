@@ -10,6 +10,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import CustomerInfoForm from './customerInfoForm';
 import { loadStripe } from '@stripe/stripe-js';
+import toast from 'react-hot-toast';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
@@ -49,27 +50,35 @@ const CartModal = () => {
   };
 
   const handleCheckout = async () => {
-    try {
-      const response = await axios.post('/api/create-checkout-session', {
-        items: cartItems,
-        customer,
-      });
-  
-      const { id } = response.data;
-      const stripe = await stripePromise;
-  
-      if (stripe) {
-        const { error } = await stripe.redirectToCheckout({ sessionId: id });
-  
-        if (error) {
-          console.error('Error redirecting to checkout:', error);
+
+    if(customer.name === '' || customer.email === '' || customer.phone === ''){
+      toast.error('Missing Fields ❌')
+    } else {
+
+      try {
+        const response = await axios.post('/api/create-checkout-session', {
+          items: cartItems,
+          customer,
+        });
+    
+        const { id } = response.data;
+        const stripe = await stripePromise;
+    
+        if (stripe) {
+          const { error } = await stripe.redirectToCheckout({ sessionId: id });
+    
+          if (error) {
+            console.error('Error redirecting to checkout:', error);
+          }
+        } else {
+          console.error('Stripe.js failed to load.');
         }
-      } else {
-        console.error('Stripe.js failed to load.');
+      } catch (error) {
+        console.error('Error creating checkout session:', error);
       }
-    } catch (error) {
-      console.error('Error creating checkout session:', error);
     }
+
+    
   };
 
   console.log(lang);
@@ -143,6 +152,7 @@ const CartModal = () => {
               </div>
               <CustomerInfoForm onCustomerInfoChange={handleCustomerInfoChange} />
               <div className="mt-6 flex justify-between">
+                
                 <button
                   onClick={closeModal}
                   className="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300"
