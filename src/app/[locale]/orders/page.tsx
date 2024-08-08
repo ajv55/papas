@@ -163,6 +163,11 @@ const Page =  () => {
               Home Page
             </Link>
             
+            <Link href='/signOut'
+         className='text-sm'
+            >
+              Sign Out
+            </Link>
         </div>
     </aside>
     <div className='self-end md:hidden border-b-2 border-primary-dark  flex justify-between items-center w-full'>

@@ -65,6 +65,7 @@ export const config = {
     '/',
     '/denied',
     '/terms',
-    '/privacy'
+    '/privacy',
+    '/signOut'
     ],
 };

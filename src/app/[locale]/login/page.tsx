@@ -113,7 +113,7 @@ export default function Page() {
         <div>
           <button
             type="submit"
-            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-xl font-medium rounded-md text-primary-dark bg-primary-pink hover:bg-primary-pink focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-pink"
+            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-xl font-medium rounded-md text-primary-light bg-primary-dark hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-pink"
           >
             Sign In
           </button>
@@ -123,14 +123,6 @@ export default function Page() {
 
        
       </form>
-      <div className="mt-6 text-center text-sm leading-5 text-gray-600">
-        <p>
-          Don&#39;t have an account?{' '}
-          <Link href="/reg" className="font-medium text-indigo-600 hover:text-indigo-500">
-            Register here
-          </Link>
-        </p>
-      </div>
     </div>
   </div>
   )
